@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome MyMoStartup",
+  "Type": "App",
+  "Id": "SMxMaDiPB0yD7qH_9ILnRw",
+  "Reference": "fYAV15FogEuA7slXcMiqig/SMxMaDiPB0yD7qH_9ILnRw",
+  "Created": "2024-09-28T23:52:18.7621445Z",
+  "Updated": "2024-09-28T23:52:18.7621445Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

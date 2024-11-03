@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome MyMoStartup",
+  "Type": "Screen",
+  "Id": "Kj70TuGlTkStwt1uCAdNJg",
+  "Reference": "fYAV15FogEuA7slXcMiqig/Kj70TuGlTkStwt1uCAdNJg",
+  "ParentRef": "fYAV15FogEuA7slXcMiqig/NF1sVcgTiEePlebT-8H2_g",
+  "Created": "2024-09-28T23:52:18.7915839Z",
+  "Updated": "2024-09-28T23:52:18.7915839Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

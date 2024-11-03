@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="ONrB8hLjF0OUegrl_llRbQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKHSURBVDhPhZPtS5NRGMYlC6GIgqh/oL70tRd6xTKyPhSB9CXog5EV5tRlpYsSEgTBysKyDKtVEKlMp9uojEjH3ObLJEW3ls5cb3PTLefUvbjHPVf3OTvSB3u54Dee5z7XdXN27vOk/EsANkuJhZ5ANCRPRIJgzMbpB7hDrBG2v4tMpTq3BXtblNjXWoT0lgvIaruOvskRidYUwvZnkWEZ0VDYWYMzHbfQ7fsIs3cIp9pvIM9UTUtoIVYI+1LR4qp4Quo83laGQ4YS6N1WFkKZ7TkUprvssZFIFfakqLCS2EJkEkeI3jdfe3H01TUc0F3GXDyK7PeVqBrQ0BIqRCwpKqxPyPJT94w32O1zxmjLsZ4J50K/fxQlXXU4+a4Cofkw3412rJM1yBHRpKhQZPQMyLu1BWCwg9ujLeRs05zHs09v8W12AjuaFbBNDkfInyGiPJxKaPLpvynNNXDP+NDvd8EXmeL4o9MY+unmB5ipL6FxTn0n/yYR5w3WhqWY7djrUtS72mEn80F9MZo+mxCMzaLWrsf2pjycM97GyDTL4h6xXMR5g42eucAPtm2L1w46C77lrZpc7GouQIbuElrHLDCND9IdGGYNropoUlRI/+B3hXc259P2vczAZfU58NBhwHg4wN9z6D5U9jewx5simhQVsnVuq8y2PRMPM8MShaUoDhtUaBw1stdcEU2KCuXVg1qwS9Po6oCKxsZGt4iq6xHOGqv4OTimvsyRf7+I8jCbwEul+T7WqbP42IosD3CFQouwBqU9anTQmOl86sm/WsR5gzRZlg3lfS9w0VKL0ZCHfW3snj8mngjURB2hIDaI6G9R8XREigXnE5KTnk8QaWLpP0pJ+QXgDlI/XSFonAAAAABJRU5ErkJggg==" Selector="&lt;html app='chrome.exe' title='MyMoStartup' /&gt;" Title="MyMoStartup" Url="https://desk.zoho.com/agent/mymostartup/mymostartup/tickets/list/all-cases">
+      <imageRef attrName="InformativeScreenshot" originalValue="41a26cd32ced1c9efc8924ac8109b91e.jpg" xmlns="">0T8usuR-WA06bUrHk-lW_3A</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

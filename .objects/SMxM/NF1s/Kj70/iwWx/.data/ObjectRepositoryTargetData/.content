@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Rg8xqnZ7e024VVTCreNLXw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://desk.zoho.com/agent/mymostartup/mymostartup/tickets/new" CVScreenId="14db928b-2069-4635-82d1-6026252cb7f8" CvElementArea="35, 979, 94, 33" CvTextArea="59, 988, 48, 13" CvTextArgument="Submit" CvType="Button" DesignTimeRectangle="38, 981, 90, 29" DesignTimeScaleFactor="1" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Submit' tag='BUTTON' type='button' class='zdr_button_tag zd_v2-button-bold zd_v2266b1e491d zd_v2-button-primaryfilled zd_v2-button-medium zd_v2-button-container zd_v2-button-native zd_v2-button-varClass zd_v24af66c9aeb' check:innerText='Submit' /&gt;" Guid="288d498d-7aec-40c5-8451-fe957be0ec04" ScopeSelectorArgument="&lt;html app='chrome.exe' title='MyMoStartup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="14db928b-2069-4635-82d1-6026252cb7f8" CvElementArea="138, 979, 93, 32" CvTextArea="162, 988, 45, 13" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="140, 981, 90, 29" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Cancel' tag='BUTTON' type='button' class='zdr_button_tag zd_v2-button-bold zd_v2266b1e491d zd_v2-button-secondary zd_v2-button-medium zd_v2-button-container zd_v2-button-native zd_v2-button-varClass zd_v24af66c9aeb' check:innerText='Cancel' /&gt;" Guid="e1b626ae-214a-47a4-bdac-e4bfaa4f6398" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="0da7bdf5183bf84bdc6824a46d4855db.png" xmlns="">0HKducR62mUaNPCaLvI9xkg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

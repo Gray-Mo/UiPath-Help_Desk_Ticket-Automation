@@ -1,0 +1,348 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ZohoAutomation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_zContactName" Type="InArgument(x:String)" />
+    <x:Property Name="in_zEmail" Type="InArgument(x:String)" />
+    <x:Property Name="in_zSubject" Type="InArgument(x:String)" />
+    <x:Property Name="out_zSuccessful" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ZohoAutomation_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ZohoAutomation" sap:VirtualizedContainerService.HintSize="1286,2641" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="1112,2618" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1078,2535" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch.Try>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome MyMoStartup" sap:VirtualizedContainerService.HintSize="1040,2284" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a8a4114b-3453-4a02-9831-1207838917bb" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do: Create Zoho Automation" sap:VirtualizedContainerService.HintSize="1006,2067" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="972,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a8a4114b-3453-4a02-9831-1207838917bb" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://desk.zoho.com/agent/mymostartup/mymostartup/tickets/list/all-cases" DesignTimeRectangle="1546, 164, 32, 13" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='I' type='' class='zd_font_icons zd_v213bca50f0a zd_v266b0c87383 zd_v2-allmoduleformshortcut-plusIcon' aaname='' /&gt;" Guid="83e0849f-14f4-41a4-9907-71b67c0c6356" InformativeScreenshot="3834de2c8ec996a3d89889abf6ae015c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='MyMoStartup' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Contact Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="972,286" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="a8a4114b-3453-4a02-9831-1207838917bb" Text="[in_zContactName]" Version="V4">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://desk.zoho.com/agent/mymostartup/mymostartup/tickets/new" CVScreenId="800ff312-cfaa-44b3-81cd-8f19d2966a85" CvElementArea="305, 346, 265, 31" CvType="InputBox" DesignTimeRectangle="308, 349, 260, 28" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='ZD_45' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZD_45' tag='INPUT' type='text' class='zdr_input_tag zd_v2-textbox-container zd_v2-textbox-basic zd_v2-textbox-varClass zd_v2-textbox-xmedium zd_v2-textbox-primary zd_v2266b1e491d zd_v2-textbox-effect zd_v2-textbox-borderColor_default' aaname='Contact Name' /&gt;" Guid="b208e2b7-cad6-4f63-a523-dcf841ba931b" InformativeScreenshot="889e57cf269ec555e952845170ef63c4.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='MyMoStartup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="800ff312-cfaa-44b3-81cd-8f19d2966a85" CvTextArea="307, 327, 103, 14" CvTextArgument="Contact Name *" CvType="Text" DesignTimeRectangle="308, 326, 103, 18" ElementType="Text" FullSelectorArgument="&lt;webctrl id='1044467000000000391' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='1044467000000000391' tag='LABEL' type='' class='zd_v2-label-label zd_v2-label-varClass zd_v2-label-title zd_v2-label-medium zd_v2-labelcolors-mandatory zd_v2-label-font_default zd_v2-label-pointer zd_v2-fields-fieldLabel zd_v2-fields-labelMandatory' aaname='Contact Name' check:innerText='Contact Name' /&gt;" Guid="8074a2dc-08c3-41d4-970d-564477acffcd" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="972,286" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="a8a4114b-3453-4a02-9831-1207838917bb" Text="[in_zEmail]" Version="V4">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://desk.zoho.com/agent/mymostartup/mymostartup/tickets/new" CVScreenId="800ff312-cfaa-44b3-81cd-8f19d2966a85" CvElementArea="304, 449, 267, 38" CvType="InputBox" DesignTimeRectangle="308, 457, 260, 28" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='ZD_47' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZD_47' tag='INPUT' type='text' class='zdr_input_tag zd_v2-textbox-container zd_v2-textbox-basic zd_v2-textbox-varClass zd_v2-textbox-xmedium zd_v2-textbox-primary zd_v2266b1e491d zd_v2-textbox-effect zd_v2-textbox-borderColor_default' aaname='Email' /&gt;" Guid="5250c8a9-1b74-487c-8dcb-c6b8f35ce92d" InformativeScreenshot="24767b8d834258dfab86808c663fc05c.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='MyMoStartup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="800ff312-cfaa-44b3-81cd-8f19d2966a85" CvTextArea="308, 435, 36, 14" CvTextArgument="Email" CvType="Text" DesignTimeRectangle="308, 434, 36, 18" ElementType="Text" FullSelectorArgument="&lt;webctrl id='1044467000000000393' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='1044467000000000393' tag='LABEL' type='' class='zd_v2-label-label zd_v2-label-varClass zd_v2-label-title zd_v2-label-medium zd_v2-labelcolors-default zd_v2-label-font_default zd_v2-label-pointer zd_v2-fields-fieldLabel' aaname='Email' check:innerText='Email' /&gt;" Guid="9117ab26-2225-4aef-a87c-f9d2b98d2f98" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Subject'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="972,286" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="a8a4114b-3453-4a02-9831-1207838917bb" Text="[in_zSubject]" Version="V4">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://desk.zoho.com/agent/mymostartup/mymostartup/tickets/new" CVScreenId="800ff312-cfaa-44b3-81cd-8f19d2966a85" CvTextArea="308, 577, 135, 14" CvTextArgument="Subject cannot be blank" CvType="Text" DesignTimeRectangle="308, 560, 650, 28" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='ZD_49' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ZD_49' tag='INPUT' type='text' class='zdr_input_tag zd_v2-textbox-container zd_v2-textbox-basic zd_v2-textbox-varClass zd_v2-textbox-xmedium zd_v2-textbox-primary zd_v2266b1e491d zd_v2-textbox-effect zd_v2-textbox-borderColor_default' aaname='Subject' /&gt;" Guid="7a8d1cc1-cdc4-409c-b940-053d8b90fed4" InformativeScreenshot="210be68cb190823d9bb60dcadba5559f.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='MyMoStartup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="800ff312-cfaa-44b3-81cd-8f19d2966a85" CvElementArea="305, 530, 655, 41" CvType="InputBox" DesignTimeRectangle="308, 537, 59, 18" ElementType="Text" FullSelectorArgument="&lt;webctrl id='Subject' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Subject' tag='LABEL' type='' class='zd_v2-label-label zd_v2-label-varClass zd_v2-label-title zd_v2-label-medium zd_v2-labelcolors-mandatory zd_v2-label-font_default zd_v2-label-cursor zd_v2-fields-fieldLabel zd_v2-fields-labelMandatory' aaname='Subject' check:innerText='Subject' /&gt;" Guid="1c259b81-1027-4f32-bfeb-1292ecc4b6d5" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Submit'" sap:VirtualizedContainerService.HintSize="972,225" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a8a4114b-3453-4a02-9831-1207838917bb" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://desk.zoho.com/agent/mymostartup/mymostartup/tickets/new" CVScreenId="eb3bd593-4d42-4157-987b-7af50992c816" CvElementArea="35, 979, 94, 33" CvTextArea="59, 988, 48, 13" CvTextArgument="Submit" CvType="Button" DesignTimeRectangle="38, 981, 90, 29" DesignTimeScaleFactor="1" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Submit' tag='BUTTON' type='button' class='zdr_button_tag zd_v2-button-bold zd_v2266b1e491d zd_v2-button-primaryfilled zd_v2-button-medium zd_v2-button-container zd_v2-button-native zd_v2-button-varClass zd_v24af66c9aeb' check:innerText='Submit' /&gt;" Guid="e63f0de4-c256-41c6-a4a9-9dbb7a97e5e1" InformativeScreenshot="e321d20863cf0788a03a4a448bbfec75.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='MyMoStartup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="eb3bd593-4d42-4157-987b-7af50992c816" CvElementArea="138, 979, 93, 32" CvTextArea="162, 988, 45, 13" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="140, 981, 90, 29" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Cancel' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Cancel' tag='BUTTON' type='button' class='zdr_button_tag zd_v2-button-bold zd_v2266b1e491d zd_v2-button-secondary zd_v2-button-medium zd_v2-button-container zd_v2-button-native zd_v2-button-varClass zd_v24af66c9aeb' check:innerText='Cancel' /&gt;" Guid="795a178c-a4e4-43fa-a4bf-21d0d9aee36f" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="Button 'Button 'Submit''" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Target>
+                          <uix:TargetAnchorable BrowserURL="https://desk.zoho.com/agent/mymostartup/mymostartup/tickets/new" CVScreenId="14db928b-2069-4635-82d1-6026252cb7f8" ContentHash="Rg8xqnZ7e024VVTCreNLXw" CvElementArea="35, 979, 94, 33" CvTextArea="59, 988, 48, 13" CvTextArgument="Submit" CvType="Button" DesignTimeRectangle="38, 981, 90, 29" DesignTimeScaleFactor="1" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Submit' tag='BUTTON' type='button' class='zdr_button_tag zd_v2-button-bold zd_v2266b1e491d zd_v2-button-primaryfilled zd_v2-button-medium zd_v2-button-container zd_v2-button-native zd_v2-button-varClass zd_v24af66c9aeb' check:innerText='Submit' /&gt;" Guid="288d498d-7aec-40c5-8451-fe957be0ec04" InformativeScreenshot="0da7bdf5183bf84bdc6824a46d4855db.png" Reference="fYAV15FogEuA7slXcMiqig/iwWx31oq8021DjPfjAYNyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='MyMoStartup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target CVScreenId="14db928b-2069-4635-82d1-6026252cb7f8" CvElementArea="138, 979, 93, 32" CvTextArea="162, 988, 45, 13" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="140, 981, 90, 29" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Cancel' tag='BUTTON' type='button' class='zdr_button_tag zd_v2-button-bold zd_v2266b1e491d zd_v2-button-secondary zd_v2-button-medium zd_v2-button-container zd_v2-button-native zd_v2-button-varClass zd_v24af66c9aeb' check:innerText='Cancel' /&gt;" Guid="e1b626ae-214a-47a4-bdac-e4bfaa4f6398" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:VerifyExecutionOptions.Target>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="Check App State 'Close Ticket'" sap:VirtualizedContainerService.HintSize="972,697" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a8a4114b-3453-4a02-9831-1207838917bb" Version="V4">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="468,342" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[out_zSuccessful]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Ticket was created in Zoho desk.&quot;]" />
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,455" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Ticket is Not created in Zoho desk&quot;]" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tickets'" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a8a4114b-3453-4a02-9831-1207838917bb" Version="V4">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://desk.zoho.com/agent/mymostartup/mymostartup/tickets/details/1044467000000308001" CVScreenId="4a8bf1e8-cb91-4fbb-8bdf-e2bdd63bcb66" CvTextArea="80, 163, 54, 14" CvTextArgument="Tickets" CvType="Text" DesignTimeRectangle="82, 162, 51, 17" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Tickets' parentid='react' tag='DIV' type='' class='zd_v2-tab-tabText zd_v24af66c9aeb zd_v2050393fdda zd_v2eb439ba1e6 zd_v2577c9fa95f' check:innerText='Tickets' /&gt;" Guid="726f4c44-090d-4eb9-92ab-ef7bbd2292af" InformativeScreenshot="e41fb7ec981720bb7b0ec50a40a9815c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(4) #104 - MyMoStartup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                  <uix:Target CVScreenId="4a8bf1e8-cb91-4fbb-8bdf-e2bdd63bcb66" CvElementArea="22, 155, 28, 31" CvType="Icon" DesignTimeRectangle="24, 159, 24, 24" ElementType="Icon" FuzzySelectorArgument="&lt;webctrl id='Layer_1' tag='svg' type='' class='' aaname='' check:text='.st1{fill:#fff}' /&gt;" Guid="a3ca15a1-b1a0-4a38-b043-9273762229c2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFcSURBVEhL1ZS9bQJBEEZdEJl7cHZFWJYoAieUQOLADTi2HFMBcuQeLqCKRe+kzxrNzc4CCycx0ifB7rBvfnlaPQ9lST0e8HW9Kd7G8Vg+Pr9C/27g989+grxvd/86/P5NZwTj/W8CRPbsZXibgFGW3UDK54E6vwsQi6AY5bVnqBvIo+qjeqZBorTevxuIPIAgMO+HbgIUQEBl7P1QE8gjND+T1kC/ARgNEkqBeoihaMkOCN8vBqpM0fJm0g7aAKyqwKwsNVFejAyje1QF+rIQMQ9aH4kq4I/VfKQqELNlUfQ2CMrHd4x+a0ozhUDtle+f+ko2tnytrKxCoB6OIuYsKx+Z1gYGhUBFH921hF0MvGZCkVYiW6UQ6Cf0XGWtkEIglpWlJvqHojtpBlRZAPKZfpJxS7LWP9MMqLJov3hMPc107mrMgJpQjIf8fa/CDMmqVZprFQ7NPbUwcCgnRzcoteRDMMwAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <uix:NClick.VerifyOptions>
+                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                              <uix:VerifyExecutionOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionOptions.Retry>
+                              <uix:VerifyExecutionOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionOptions.Timeout>
+                            </uix:VerifyExecutionOptions>
+                          </uix:NClick.VerifyOptions>
+                        </uix:NClick>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://desk.zoho.com/agent/mymostartup/mymostartup/tickets/details/1044467000000321001" CVScreenId="7b9bb0ba-1446-417d-849e-81898f3d853a" CvElementArea="1789, 980, 111, 32" CvTextArea="1804, 988, 79, 13" CvTextArgument="Close Ticket" CvType="Button" DesignTimeRectangle="1790, 981, 108, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Close Ticket' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Close Ticket' tag='BUTTON' type='button' class='zdr_button_tag zd_v2-ticketclosebutton-btnTxt zd_v2-button-bold zd_v2266b1e491d zd_v2-button-primary zd_v2-button-medium zd_v2-button-container zd_v2-button-native zd_v2-button-varClass zd_v24af66c9aeb' check:innerText='Close Ticket' /&gt;" Guid="a7f4569f-3545-4b0a-a5e7-8548e359bb7d" InformativeScreenshot="29126410cd53b5804bcc8076d0c04de9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(13) #113 - MyMoStartup' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="7b9bb0ba-1446-417d-849e-81898f3d853a" CvTextArea="713, 988, 226, 15" CvTextArgument="Apply Macro Remote Assist O" CvType="Text" DesignTimeRectangle="690, 981, 1070, 29" FuzzySelectorArgument="&lt;webctrl type='' class='zd_v2ff266bc91b zd_v273a3ca0b12 zd_v2fd3b1bbb3b zd_v2bd11ce84cf' parentid='react' tag='DIV' aaname='' check:innerText='Apply Macro&amp;#xA;Remote Assist' /&gt;" Guid="dff4f409-2ce1-41f2-aafd-2e9659f80fc5" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="ONrB8hLjF0OUegrl_llRbQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKHSURBVDhPhZPtS5NRGMYlC6GIgqh/oL70tRd6xTKyPhSB9CXog5EV5tRlpYsSEgTBysKyDKtVEKlMp9uojEjH3ObLJEW3ls5cb3PTLefUvbjHPVf3OTvSB3u54Dee5z7XdXN27vOk/EsANkuJhZ5ANCRPRIJgzMbpB7hDrBG2v4tMpTq3BXtblNjXWoT0lgvIaruOvskRidYUwvZnkWEZ0VDYWYMzHbfQ7fsIs3cIp9pvIM9UTUtoIVYI+1LR4qp4Quo83laGQ4YS6N1WFkKZ7TkUprvssZFIFfakqLCS2EJkEkeI3jdfe3H01TUc0F3GXDyK7PeVqBrQ0BIqRCwpKqxPyPJT94w32O1zxmjLsZ4J50K/fxQlXXU4+a4Cofkw3412rJM1yBHRpKhQZPQMyLu1BWCwg9ujLeRs05zHs09v8W12AjuaFbBNDkfInyGiPJxKaPLpvynNNXDP+NDvd8EXmeL4o9MY+unmB5ipL6FxTn0n/yYR5w3WhqWY7djrUtS72mEn80F9MZo+mxCMzaLWrsf2pjycM97GyDTL4h6xXMR5g42eucAPtm2L1w46C77lrZpc7GouQIbuElrHLDCND9IdGGYNropoUlRI/+B3hXc259P2vczAZfU58NBhwHg4wN9z6D5U9jewx5simhQVsnVuq8y2PRMPM8MShaUoDhtUaBw1stdcEU2KCuXVg1qwS9Po6oCKxsZGt4iq6xHOGqv4OTimvsyRf7+I8jCbwEul+T7WqbP42IosD3CFQouwBqU9anTQmOl86sm/WsR5gzRZlg3lfS9w0VKL0ZCHfW3snj8mngjURB2hIDaI6G9R8XREigXnE5KTnk8QaWLpP0pJ+QXgDlI/XSFonAAAAABJRU5ErkJggg==" InformativeScreenshot="41a26cd32ced1c9efc8924ac8109b91e.jpg" Reference="fYAV15FogEuA7slXcMiqig/Kj70TuGlTkStwt1uCAdNJg" Selector="&lt;html app='chrome.exe' title='MyMoStartup' /&gt;" Title="MyMoStartup" Url="https://desk.zoho.com/agent/mymostartup/mymostartup/tickets/list/all-cases" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1044,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+              </ActivityAction.Argument>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Exception error: ticket not created&quot;]" />
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+      </TryCatch>
+    </Sequence>
+  </Sequence>
+</Activity>
